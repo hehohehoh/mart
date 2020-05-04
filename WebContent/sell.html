@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>상품 판매창</title>
+	<script type="text/javascript">
+		function send_num(){
+			var doc = document.send;
+			var num = doc.num;
+			
+			if(num<=0)
+				alert('Number Must be positive');
+			else{
+				doc.method="post";
+				doc.action="sell";
+				doc.submit();
+			}	
+		}
+	</script>
+</head>
+<body>
+	<form name="send">
+		판매하실 상품의 갯수를 입력하세요: 
+		<input type="number" name="num">
+		<input type="submit" value="전송" onClick="send_num()">
+	</form>
+</body>
+</html>
